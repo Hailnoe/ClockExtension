@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+<title>Timely Pong</title>
+<head> 
+    
+<h1 class="header">Timely Pong</h1>
+<style src="main.css"></style>
+</head> 
+
+<body> 
+
+<input type="button" class ="b1" value=" Click on me to start the time" id="b1" height="20px" onclick="CountDown();">
+<h2>Remaining time is displayed here:</h2>
+
+<input type="button" class ="b2" value="Minutes +1" id="b2" height="20px" onclick="Minuteplus();">
+
+<input type="button" class ="b3" value="Seconds +1" id="b3" height="20px" onclick="Secondplus();">
+
+<input class ="c1" id="min" type="text" onload="getminutes();">
+
+<input class="c2" id="sec" type="text" onload="getseconds();"> 
+
+<p id="comment"></p>
+        
+    <script src="popup.js">
+    </script>  
+</style>  
+ </body>
+</html>
