@@ -6,10 +6,14 @@
   "version": "1.0",
 
   "browser_action": {
-   "default_icon": "icon.png",
+   "default_icon": "images/icon.jpg",
    "default_popup": "popup.html"
   },
   "permissions": [
-   "activeTab"
-   ]
+    "notifications", "storage", "alarms"
+   ],
+   "background": {
+    "scripts": ["js/timer.js", "js/background.js"],
+    "persistent": false
+  }
 }
