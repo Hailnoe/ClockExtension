@@ -95,6 +95,7 @@ let TIMER_STATES = {
   
     // If the timer is finished, stop counting down
     if (timerIsFinished(timer)) {
+      console.log('potato')
       return;
     }
   

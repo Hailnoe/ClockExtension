@@ -1,11 +1,25 @@
 'use strict';
+let activeTimer;
 
-
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+  let timer = changes.timer.newValue;
+  if (timerIsFinished(changes.timer.newValue)) {
+    console.log('Beep beep! All done.');
+    let reward = document.getElementById('your-reward')
+      if (reward) {
+      reward.innerHTML='<a target="_blank" href="https://obsolete-paste.surge.sh">Your reward!</a>'; }
+  //  } reward.innerHTML='<a href="level-knowledge.surge.sh">your-reward</a>';
+  }
+  if (changes.hasOwnProperty('timer'))  {
+    let timer = changes.timer.newValue
+    console.log('timer is:', timer)
+    let timerDisplay = document.getElementById('timer-display')
+    timerDisplay.innerText = timerGetFormattedClock(timer)
+  }
+});
 
 function setAlarm(event) {
-    console.log('hello')
   let minutes = parseFloat(event.target.value);
-  console.log('minutes is:', minutes)
   chrome.browserAction.setBadgeText({text: 'ABC'});
 
   // chrome.alarms.create({delayInMinutes: minutes});
